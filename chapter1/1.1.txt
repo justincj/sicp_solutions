@@ -1,0 +1,48 @@
+Below is a sequence of expression. What is the reuslt printed by the interpretter in response to each expression? Assume that he sequence is to be evaluated in the order in which it is presented.
+
+1. 10
+:- ;Value: 10
+
+2. (+ 5 3 4)
+:- 12
+
+3. (- 9 1)
+:- 8
+
+4. (/ 6 2)
+:- 3
+
+5. (+ (* 2 4) (- 4 6))
+:- 6
+
+6. (define a 3)
+:- a
+
+7. (define b (+ a 1))
+:- b
+
+8. (+ a b (* a b))
+:- 19
+
+9. (= a b)
+:- #f
+
+10. (if (and (> b a) (< b (* a b)))
+b a)
+:- 4 
+
+11. (cond ((= a 4) 6)
+          ((= b 4)  (+ 6 7 a))
+          (else 25))
+:- 16
+
+
+12. (+ 2 (if (> b a) b a))
+:- 6
+
+13. (* (cond ((> a b) a)
+        ((< a b) b)
+        (else -1))
+  (+ a 1))
+:- 16
+
