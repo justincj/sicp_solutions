@@ -1,0 +1,19 @@
+Observe that our model of evaluation allows for combination whose operators are compound expressions. Use this observation to describe the behaviour of the following procedure:
+
+(define (a-plus-abs-b a b)
+    ((if (> b 0) + -) a b)
+)
+
+:- This function returns the sum of a and absoulute value of b.
+
+; ex: (a-plus-abs-b 1 2) 
+      ((if (> 2 0) + -) 1 2)  ;{sustitution model}
+      ((if # + -) 1 2)
+      (+ 1 2) 
+      3
+
+      (a-plus-abs-b 1 -2)
+      ((if (> -2 0) + -) 1 -2) ; {sustitution model}
+      ((if #f + -) 1 -2 )       
+      (- 1 -2)
+      3

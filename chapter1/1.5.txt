@@ -1,0 +1,32 @@
+Exercise 1.5: 
+Ben Bitdiddle has invented a test to determine
+whether the interpreter he is faced with is using applicative-
+order evaluation or normal-order evaluation. He defines the
+following two procedures:
+
+(define (p) (p))
+
+(define (test x y)
+(if (= x 0) 0 y))
+
+Then he evaluates the expression
+(test 0 (p))
+
+What behavior will Ben observe with an interpreter that
+uses applicative-order evaluation? What behavior will he
+observe with an interpreter that uses normal-order evalu-
+ation? Explain your answer.
+
+
+When executing code with interpreter with appliative-order evaluation, code will not execute since it can't evaluate the second argument of test function call expression. 
+But if Ben uses interpreter with normal order of evaluation he will get result of 0 because arguments to procedure call is not evaluated until last moment.
+
+
+;; applicative order evaluation
+; (test 0 (p)) 
+;; Error 
+
+;; in normal order evaluation
+(test 0 (p))
+(if (= 0 0) 0 (p))
+0
