@@ -1,0 +1,29 @@
+; make-mobile
+(define (make-mobile left right)
+  (list left right))
+
+; make-branch
+(define (make-branch length structure)
+  (list length structure))
+
+(define a (make-mobile (make-branch 2 3) (make-branch 5 8)))
+(define b (make-mobile (make-branch 3 5) (make-branch 3 (make-mobile (make-branch 3 8) (make-branch 3 10)))))
+
+; left-branch
+(define (left-branch mobile)
+  (car mobile))
+
+; right-branch
+(define (right-branch mobile)
+  (car (cdr mobile)))
+
+; branch-length
+(define (branch-length branch)
+  (car branch))
+
+; branch-structure
+(define (branch-structure branch)
+  (car (cdr branch)))
+
+
+
